@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1d65d588-abdf-4dd7-8e2d-4e4d0f50cdc4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     v_registros_aceptados_general.`id_registro` AS v_registros_aceptados_general_id_registro,
+     v_registros_aceptados_general.`appa_cliente` AS v_registros_aceptados_general_appa_cliente,
+     v_registros_aceptados_general.`apma_cliente` AS v_registros_aceptados_general_apma_cliente,
+     v_registros_aceptados_general.`peso` AS v_registros_aceptados_general_peso,
+     v_registros_aceptados_general.`numero_paquetes` AS v_registros_aceptados_general_numero_paquetes,
+     v_registros_aceptados_general.`descripcion` AS v_registros_aceptados_general_descripcion,
+     v_registros_aceptados_general.`dpto_partida` AS v_registros_aceptados_general_dpto_partida,
+     v_registros_aceptados_general.`dpto_llegada` AS v_registros_aceptados_general_dpto_llegada
+FROM
+     `v_registros_aceptados_general` v_registros_aceptados_general]]>
+	</queryString>
+	<field name="v_registros_aceptados_general_id_registro" class="java.lang.Integer"/>
+	<field name="v_registros_aceptados_general_appa_cliente" class="java.lang.String"/>
+	<field name="v_registros_aceptados_general_apma_cliente" class="java.lang.String"/>
+	<field name="v_registros_aceptados_general_peso" class="java.math.BigDecimal"/>
+	<field name="v_registros_aceptados_general_numero_paquetes" class="java.lang.Integer"/>
+	<field name="v_registros_aceptados_general_descripcion" class="java.lang.String"/>
+	<field name="v_registros_aceptados_general_dpto_partida" class="java.lang.String"/>
+	<field name="v_registros_aceptados_general_dpto_llegada" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="553" height="95" backcolor="#000000" uuid="fbbd707c-6a79-4e67-8aac-5a44383ab04d"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="ab1b0cf3-b6de-4122-829f-7ad8045afc96"/>
+					<textElement>
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Envios]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="157" y="66" width="249" height="29" uuid="44d35c92-931c-4ce3-8ea3-0320d81b9b83"/>
+					<textElement>
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[ACEPTADOS]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="100" width="553" height="32" forecolor="#000000" backcolor="#CC0000" uuid="0d8f1493-4564-40ba-bee1-50bd58ca2de7"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="406" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="a7c36efd-de01-4352-9a82-825c3cdcb0d4"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="7" width="33" height="18" forecolor="#000000" uuid="c7c3667a-60a4-486b-9f8f-79190dedac4f"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="33" y="7" width="69" height="18" forecolor="#000000" uuid="690fd7d3-5ec5-49b5-a599-71f4d153cbc6"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AP PATERNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="102" y="7" width="78" height="18" forecolor="#000000" uuid="8d116ef5-2c67-4438-a8e1-cb3632447abf"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AP MATERNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="180" y="7" width="45" height="18" forecolor="#000000" uuid="e0e5e9a7-3f9f-48a7-a458-ac8b9c270a55"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PESO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="225" y="7" width="69" height="18" forecolor="#000000" uuid="4ed36682-14dc-4b30-a54b-3468173bf61d"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAQUETES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="294" y="7" width="123" height="18" forecolor="#000000" uuid="ec63f1a1-11c7-44cc-9d51-60a75201b966"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="417" y="7" width="69" height="18" forecolor="#000000" uuid="82069ca1-1d89-4c04-bd70-7707afd4a2e6"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PARTIDA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="486" y="7" width="69" height="18" forecolor="#000000" uuid="53c06be0-6d43-4276-a119-4d8b2c7f9faf"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LLEGADA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18" uuid="0e5a8a18-7ee9-4e03-906c-e7737737a161"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="33" height="18" uuid="2e16c092-778b-439e-9f5a-83687d1e13c6"/>
+					<textElement textAlignment="Center">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_aceptados_general_id_registro}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="33" y="0" width="69" height="18" uuid="c362f91b-4fcf-4b69-99e7-f06d741764b3"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_aceptados_general_appa_cliente}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="102" y="0" width="78" height="18" uuid="da71edb5-3f1c-490c-818b-09d84d1cf784"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_aceptados_general_apma_cliente}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="180" y="0" width="45" height="18" uuid="3f2bdc24-af31-40a6-bf2c-992271a9dcdf"/>
+					<textElement textAlignment="Center">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_aceptados_general_peso}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="225" y="0" width="69" height="18" uuid="15662c8a-cea3-4d9d-b32c-913f9faf5654"/>
+					<textElement textAlignment="Center">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_aceptados_general_numero_paquetes}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="294" y="0" width="123" height="18" uuid="a831268c-22d6-4011-98b2-b2a4634ed6d8"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_aceptados_general_descripcion}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="417" y="0" width="69" height="18" uuid="cdd03791-70ee-4c5d-92a6-01c23f8f3e58"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_aceptados_general_dpto_partida}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="486" y="0" width="69" height="18" uuid="0bc21c16-4653-4135-befd-a5da9a34332c"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_aceptados_general_dpto_llegada}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="100d7220-4887-4a37-a60d-1bf30b46b088"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="567c5dfb-dffc-437e-9317-af8a35b06582"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="75389193-eaf3-465c-bf5a-66f1ebd2fb15"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="f99032c9-d21a-4170-920d-4b86411a1db9"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="9dd5ae4a-3836-47fe-af34-83f362d2090d"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

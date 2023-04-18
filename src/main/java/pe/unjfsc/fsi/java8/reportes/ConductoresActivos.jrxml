@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cf303ce6-2a77-4e23-9c86-53a235638b5f">
+	<property name="ireport.zoom" value="0.9558924531310704"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     v_conductor_activo.`id_conductor` AS v_conductor_activo_id_conductor,
+     v_conductor_activo.`dni_conductor` AS v_conductor_activo_dni_conductor,
+     v_conductor_activo.`nomb_conductor` AS v_conductor_activo_nomb_conductor,
+     v_conductor_activo.`apat_conductor` AS v_conductor_activo_apat_conductor,
+     v_conductor_activo.`amat_conductor` AS v_conductor_activo_amat_conductor,
+     v_conductor_activo.`nro_registro` AS v_conductor_activo_nro_registro,
+     v_conductor_activo.`id_vehiculo` AS v_conductor_activo_id_vehiculo,
+     v_conductor_activo.`brevete` AS v_conductor_activo_brevete,
+     v_conductor_activo.`soat` AS v_conductor_activo_soat,
+     v_conductor_activo.`revision_tecnica` AS v_conductor_activo_revision_tecnica
+FROM
+     `v_conductor_activo` v_conductor_activo]]>
+	</queryString>
+	<field name="v_conductor_activo_id_conductor" class="java.lang.Integer"/>
+	<field name="v_conductor_activo_dni_conductor" class="java.lang.Integer"/>
+	<field name="v_conductor_activo_nomb_conductor" class="java.lang.String"/>
+	<field name="v_conductor_activo_apat_conductor" class="java.lang.String"/>
+	<field name="v_conductor_activo_amat_conductor" class="java.lang.String"/>
+	<field name="v_conductor_activo_nro_registro" class="java.lang.Integer"/>
+	<field name="v_conductor_activo_id_vehiculo" class="java.lang.Integer"/>
+	<field name="v_conductor_activo_brevete" class="java.lang.String"/>
+	<field name="v_conductor_activo_soat" class="java.lang.Integer"/>
+	<field name="v_conductor_activo_revision_tecnica" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="f1ba5309-6ee6-49ee-94e0-f00768b2cf08"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="7c6566ec-20c3-4bce-b47d-2039b83a8f7c"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[REGISTRO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="cc975874-81e7-4f85-b17a-f448075c72cd"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Conductores Activos]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="28">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="7e1ab257-9819-405b-8b1a-bf21fb336ca7"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="21" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="eaf9bc81-55f4-438f-b2ce-1d89c19bcb5e"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="21" y="0" width="52" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="e99772ba-ca8d-4c70-9df3-e0fefb2c3545"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DNI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="73" y="0" width="65" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="89aca78f-71de-48f4-b34c-e52f6aa94354"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="138" y="0" width="68" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b5a11df0-235c-4470-b87f-df475794d728"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[A. Paterno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="206" y="0" width="67" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="dbb22561-9d98-4152-b68e-34344862e6d0"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[A. Materno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="273" y="0" width="67" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="9395ee12-868c-41e0-95d4-90348d0429fe"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Registro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="340" y="0" width="45" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="6220500a-4cc4-42d1-b1b7-54cd8b45ca0a"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vehiculo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="385" y="0" width="65" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="cc468401-0d5d-4fad-8500-fc5a829b2da6"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Brevete]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="450" y="0" width="33" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="884761f2-b25a-4e67-9005-50755716ac88"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SOAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="483" y="0" width="72" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="4d5fd68a-d91a-46b5-bda8-bea8aedf1330"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rev. Tec.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="d9627ae8-7c2a-4981-9320-3aab57cef070"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="21" height="20" uuid="bd89cf37-c244-4725-8a1b-6e777d02e018"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{v_conductor_activo_id_conductor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="21" y="0" width="52" height="20" uuid="5edeed0e-45f0-42bd-a9f1-5c23af950b18"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{v_conductor_activo_dni_conductor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="73" y="0" width="65" height="20" uuid="a53e14ee-9122-4ce9-b25f-7adbb46d7d16"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{v_conductor_activo_nomb_conductor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="138" y="0" width="68" height="20" uuid="a2345a22-c175-4440-92cf-b26202c3c94f"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{v_conductor_activo_apat_conductor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="206" y="0" width="67" height="20" uuid="9aacdd8f-98bb-4b72-9236-c5db232d3c55"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{v_conductor_activo_amat_conductor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="273" y="0" width="67" height="20" uuid="301e9507-7477-4cb6-aedc-9653d51d58ed"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{v_conductor_activo_nro_registro}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="340" y="0" width="45" height="20" uuid="d0823cec-828e-4a4a-822e-c36ec1f8ff22"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{v_conductor_activo_id_vehiculo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="385" y="0" width="65" height="20" uuid="4070c7ab-78ec-46b0-9191-e44f512916df"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{v_conductor_activo_brevete}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="483" y="0" width="72" height="20" uuid="7c90dbcd-f47b-4b1a-bd99-08643611daa9"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{v_conductor_activo_revision_tecnica}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="450" y="0" width="33" height="20" uuid="87dd0321-15bd-4746-ba6e-04f44c426a5a"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{v_conductor_activo_soat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="07c30779-2498-4948-ba57-fac21d646451"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="76454512-3891-4a13-9602-236254886bb2"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="3e730ba4-6617-40e0-b247-cee761b91ca6"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="00e61b6e-aed6-4a12-bf60-967ff6ced0a6">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     v_registros_anulados.`id_registro` AS v_registros_anulados_id_registro,
+     v_registros_anulados.`appa_cliente` AS v_registros_anulados_appa_cliente,
+     v_registros_anulados.`apma_cliente` AS v_registros_anulados_apma_cliente,
+     v_registros_anulados.`peso` AS v_registros_anulados_peso,
+     v_registros_anulados.`numero_paquetes` AS v_registros_anulados_numero_paquetes,
+     v_registros_anulados.`descripcion` AS v_registros_anulados_descripcion,
+     v_registros_anulados.`dpto_partida` AS v_registros_anulados_dpto_partida,
+     v_registros_anulados.`dpto_llegada` AS v_registros_anulados_dpto_llegada
+FROM
+     `v_registros_anulados` v_registros_anulados]]>
+	</queryString>
+	<field name="v_registros_anulados_id_registro" class="java.lang.Integer"/>
+	<field name="v_registros_anulados_appa_cliente" class="java.lang.String"/>
+	<field name="v_registros_anulados_apma_cliente" class="java.lang.String"/>
+	<field name="v_registros_anulados_peso" class="java.math.BigDecimal"/>
+	<field name="v_registros_anulados_numero_paquetes" class="java.lang.Integer"/>
+	<field name="v_registros_anulados_descripcion" class="java.lang.String"/>
+	<field name="v_registros_anulados_dpto_partida" class="java.lang.String"/>
+	<field name="v_registros_anulados_dpto_llegada" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="95" backcolor="#000000" uuid="927c4f26-e699-46dc-97c0-f23e622ada84"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="0f2800ff-8f44-4ca3-9f84-fb8d586cb6bc"/>
+					<textElement>
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[ENVIOS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="157" y="66" width="249" height="29" uuid="91e51d5a-cb97-4940-a429-42fd450d6077"/>
+					<textElement>
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[ANULADOS]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="100" width="555" height="32" forecolor="#000000" backcolor="#CC0000" uuid="cce37d39-4ef8-4269-996c-f9e1d0eb44d4"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="406" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="58aaa177-5296-493d-a47f-aa1d2d1fbffc"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="7" width="27" height="18" forecolor="#000000" uuid="732caf7f-57aa-43af-a3c2-e761c8cbcffd"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="27" y="7" width="88" height="18" forecolor="#000000" uuid="93b76bbd-29e9-4372-9f0d-2b56299ab0ca"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AP PATERNOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="115" y="7" width="84" height="18" forecolor="#000000" uuid="be8ca443-6322-4d0f-a7c9-19dc62e18f19"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AP MATERNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="207" y="7" width="39" height="18" forecolor="#000000" uuid="23ae356e-1ae0-48d8-b1a0-3dc49d109d52"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PESO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="246" y="7" width="69" height="18" forecolor="#000000" uuid="def50b76-d722-4c80-92ee-d0a4706fae19"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAQUETES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="315" y="7" width="102" height="18" forecolor="#000000" uuid="b09a0bcd-0046-4529-9435-f9dbe0877d4b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="417" y="7" width="69" height="18" forecolor="#000000" uuid="1cd35564-be6c-4150-8625-2c51f4d3cd80"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PARTIDA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="486" y="7" width="69" height="18" forecolor="#000000" uuid="ef76cc86-63c1-4469-b996-4aaaa2780932"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LLEGADA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18" uuid="4f2fe655-fed2-43a5-8be7-b1661a74fa0b"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="27" height="18" uuid="a4bf944d-aa97-46ff-943c-80f3e9e6ea15"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_anulados_id_registro}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="27" y="0" width="88" height="18" uuid="027e148b-10bc-400d-9a11-964b04771d3c"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_anulados_appa_cliente}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="115" y="0" width="84" height="18" uuid="9b885b46-ce3b-4b77-9efb-ab214dca3789"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_anulados_apma_cliente}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="199" y="0" width="47" height="18" uuid="7c0ebf00-d21c-43bc-8424-c3eb309f6ce0"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_anulados_peso}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="264" y="0" width="51" height="18" uuid="5976b5bc-da7c-46ed-9ca9-761d192835a6"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_anulados_numero_paquetes}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="315" y="0" width="102" height="18" uuid="61158edb-0a1d-4a10-be47-a2478a97fad7"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_anulados_descripcion}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="417" y="0" width="69" height="18" uuid="a75a0515-b2c8-4e76-9bbe-cc1f26e9d60d"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_anulados_dpto_partida}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="486" y="0" width="69" height="18" uuid="50025ffc-d061-4608-b1d9-6ed3acd7bf49"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_anulados_dpto_llegada}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="cd4d3719-802c-4ba7-b9a9-95ea9a623c0d"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="cc370393-3df3-4971-a9ab-a9daad6ab71a"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="2e59cfde-0ee9-4839-ac79-bbb956e9a90f"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="a4e90fb8-c9d3-4f02-84e8-3617e83b2801"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="b0e7e11a-ef55-4e60-9abb-86336d314df5"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

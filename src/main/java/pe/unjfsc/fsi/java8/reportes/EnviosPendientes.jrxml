@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7e86001d-c19e-446a-8142-e93fb7236b46">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="140"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     v_registros_pendientes.`id_registro` AS v_registros_pendientes_id_registro,
+     v_registros_pendientes.`appa_cliente` AS v_registros_pendientes_appa_cliente,
+     v_registros_pendientes.`apma_cliente` AS v_registros_pendientes_apma_cliente,
+     v_registros_pendientes.`peso` AS v_registros_pendientes_peso,
+     v_registros_pendientes.`numero_paquetes` AS v_registros_pendientes_numero_paquetes,
+     v_registros_pendientes.`descripcion` AS v_registros_pendientes_descripcion,
+     v_registros_pendientes.`dpto_partida` AS v_registros_pendientes_dpto_partida,
+     v_registros_pendientes.`dpto_llegada` AS v_registros_pendientes_dpto_llegada
+FROM
+     `v_registros_pendientes` v_registros_pendientes]]>
+	</queryString>
+	<field name="v_registros_pendientes_id_registro" class="java.lang.Integer"/>
+	<field name="v_registros_pendientes_appa_cliente" class="java.lang.String"/>
+	<field name="v_registros_pendientes_apma_cliente" class="java.lang.String"/>
+	<field name="v_registros_pendientes_peso" class="java.math.BigDecimal"/>
+	<field name="v_registros_pendientes_numero_paquetes" class="java.lang.Integer"/>
+	<field name="v_registros_pendientes_descripcion" class="java.lang.String"/>
+	<field name="v_registros_pendientes_dpto_partida" class="java.lang.String"/>
+	<field name="v_registros_pendientes_dpto_llegada" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="95" backcolor="#000000" uuid="8acf3fe3-8480-4b65-a467-3420428c3a8e"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="2d410aa3-e603-4a13-845b-f0bdf5fd3423"/>
+					<textElement>
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Envios]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="157" y="66" width="249" height="29" uuid="9b1e51dd-b2f6-44c8-a56e-d096e7afcf44"/>
+					<textElement>
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Pendientes]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="100" width="555" height="32" forecolor="#000000" backcolor="#CC0000" uuid="e3726f66-5686-4dda-8f9e-5dc18dc63ff2"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="408" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="5d66df59-f038-4cb7-ae35-e014ce03d332"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="7" width="24" height="18" forecolor="#000000" uuid="2b18cfb2-fdbe-4133-b889-781cf61b9839"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="24" y="7" width="82" height="18" forecolor="#000000" uuid="9914f757-7508-41ba-ac30-5a7b6b359b77"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AP  PATERNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="106" y="7" width="83" height="18" forecolor="#000000" uuid="d7aa3487-cc3e-4412-a96e-a884628d3c44"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AP MATERNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="189" y="7" width="44" height="18" forecolor="#000000" uuid="3787e9b9-ce22-4e0a-b540-e75eaad4a794"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PESO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="233" y="7" width="54" height="18" forecolor="#000000" uuid="d06d974b-b0d7-4f74-874b-9dc88b6a0728"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAQUETES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="287" y="7" width="124" height="18" forecolor="#000000" uuid="519d285c-a2f1-4c29-8f9f-cac3f6754300"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="411" y="7" width="68" height="18" forecolor="#000000" uuid="3001e2dc-8f60-4fbf-92ce-8ce45a9fbd32"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PARTIDA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="479" y="7" width="76" height="18" forecolor="#000000" uuid="71e38c5a-b0ac-4be6-b5de-48805820a4c8"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LLEGADA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18" uuid="bc94904a-5d12-40cb-bd01-28959f458d98"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="24" height="18" uuid="7067b028-9f09-47cd-9111-86ecd78deee5"/>
+					<textElement textAlignment="Center">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_pendientes_id_registro}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="24" y="0" width="82" height="18" uuid="b4419617-17d7-437c-b3f5-af8296bedf4b"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_pendientes_appa_cliente}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="106" y="0" width="83" height="18" uuid="66a7df7e-bc03-4a9a-a646-df17ce93a139"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_pendientes_apma_cliente}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="189" y="0" width="44" height="18" uuid="6d43139c-8aa5-4a32-a77a-980af34eac39"/>
+					<textElement textAlignment="Center">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_pendientes_peso}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="233" y="0" width="54" height="18" uuid="fa9c8341-df21-4868-96dc-f82553e31d54"/>
+					<textElement textAlignment="Center">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_pendientes_numero_paquetes}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="287" y="0" width="124" height="18" uuid="e961f757-ba39-446b-b9ba-c82d2143f52a"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_pendientes_descripcion}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="411" y="0" width="68" height="18" uuid="0732ff04-9ddc-4859-a3a3-ddbfea31901f"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_pendientes_dpto_partida}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="479" y="0" width="76" height="18" uuid="cc95f683-b81b-4afa-97c3-e86431bda792"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{v_registros_pendientes_dpto_llegada}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="739b91cc-cc96-4e09-80c7-31016a8a20b5"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="1047eff0-7c01-4030-8b2b-77b0f3422e61"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="43e494b7-2ddf-4f8a-8670-171c746ebd0b"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="f4c9d0ad-e273-48d7-a984-275b3feb68f1"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="a16a8bf1-63ce-42be-9a93-522ee36479fe"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
